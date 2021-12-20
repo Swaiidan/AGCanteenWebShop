@@ -1,0 +1,44 @@
+﻿@model IEnumerable<AGCanteenWebshop.Models.Tbl_Product>
+
+@{
+    ViewBag.Title = "Cake";
+}
+
+<h2>Cake</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            ProductImage
+        </th>
+        <th>
+            ProductName
+        </th>
+        <th>
+            ProductPrice
+        </th>
+        <th></th>
+    </tr>
+
+
+
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>
+                <img src="@Url.Content(item.Fld_ProductImagePath)" width="100" height="100" />
+            </td>
+            <td>
+                @item.Fld_ProductName
+            </td>
+            <td>
+                @item.Fld_ProductPrice
+            </td>
+            <td>
+                @Html.ActionLink("Buy", "OrderNow", "ShoppingCart", new { id = item.Fld_ProductID }, null)
+            </td>
+        </tr>
+    }
+
+</table>
