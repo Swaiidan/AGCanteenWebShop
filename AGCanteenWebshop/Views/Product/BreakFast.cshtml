@@ -35,8 +35,8 @@
             <td>
                 @item.Fld_ProductPrice
             </td>
-            <td>
-                @Html.ActionLink("Buy", "OrderNow", "ShoppingCart", new { id = item.Fld_ProductID }, null)
+            <td >
+                @Html.ActionLink("Buy", "Buy", "ShoppingCart", new { id = item.Fld_ProductID }, null)
             </td>
         </tr>
     }

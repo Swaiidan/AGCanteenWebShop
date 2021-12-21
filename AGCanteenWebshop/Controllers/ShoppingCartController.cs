@@ -16,7 +16,7 @@ namespace AGCanteenWebshop.Controllers
         {
             return View();
         }
-        private int isExisting(int id)
+        private int Exist (int id)
         {
             List<Item> cart = (List<Item>)Session["cart"];
             for (int i = 0; i<cart.Count; i++)
@@ -27,7 +27,7 @@ namespace AGCanteenWebshop.Controllers
 
         public ActionResult Delete(int id)
         {
-            int index = isExisting(id);
+            int index = Exist(id);
             List<Item> cart = (List<Item>)Session["cart"];
             cart.RemoveAt(index);
             Session["cart"] = cart;
@@ -35,7 +35,7 @@ namespace AGCanteenWebshop.Controllers
         }
 
 
-        public ActionResult OrderNow(int id)
+        public ActionResult Buy(int id)
         {
             if (Session["cart"] == null)
             {
@@ -47,7 +47,7 @@ namespace AGCanteenWebshop.Controllers
             else
             {
                 List<Item> cart = (List<Item>)Session["cart"];
-                int index = isExisting(id);
+                int index = Exist(id);
                 if (index == -1)
                     cart.Add(new Item(db.Tbl_Product.Find(id), 1));
                 else
