@@ -12,27 +12,20 @@ namespace AGCanteenWebshop.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Tbl_Customer
+    public partial class Tbl_CustomerRole
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        
-    
-        public int Fld_CustomerID { get; set; }
-        public string Fld_CustomerName { get; set; }
-        public Nullable<int> Fld_CustomerPhoneNumber { get; set; }
-        public string Fld_CustomerEmail { get; set; }
-        public string Fld_CustomerPassword { get; set; }
-        public int Fld_RoleId { get; set; }
-
-        public Tbl_Customer()
+        public Tbl_CustomerRole()
         {
-            
-            
+            this.Tbl_Customer = new HashSet<Tbl_Customer>();
         }
-
-
-        public virtual Tbl_CustomerRole Tbl_CustomerRole { get; set; }
+    
+        public int Fld_RoleId { get; set; }
+        public string Fld_RoleName { get; set; }
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tbl_Order> Tbl_Order { get; set; }
+        public virtual ICollection<Tbl_Customer> Tbl_Customer { get; set; }
+        public virtual Tbl_CustomerRole Tbl_CustomerRole1 { get; set; }
+        public virtual Tbl_CustomerRole Tbl_CustomerRole2 { get; set; }
     }
 }
