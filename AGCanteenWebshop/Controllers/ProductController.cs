@@ -23,6 +23,7 @@ namespace AGCanteenWebshop.Controllers
 
 
         //Get BreakFast from Category
+        //[Authorize]
         public ViewResult BreakFast()
         {
             using (var context = new AGCanteenWebShopEntities())
@@ -36,6 +37,7 @@ namespace AGCanteenWebshop.Controllers
 
 
         //Get Cake from Category
+       // [Authorize]
         public ActionResult Cake()
         {
             using (var context = new AGCanteenWebShopEntities())
@@ -50,6 +52,7 @@ namespace AGCanteenWebshop.Controllers
 
 
      //Get Fruit from Category
+     //[Authorize]
      public ActionResult Fruit()
         {
             using (var context = new AGCanteenWebShopEntities())
