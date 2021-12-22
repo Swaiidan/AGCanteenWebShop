@@ -12,9 +12,9 @@ namespace AGCanteenWebshop.Controllers
     {
         private AGCanteenWebShopEntities db = new AGCanteenWebShopEntities();
 
-        public ActionResult Index()
+        public ActionResult Cart()
         {
-            return View();
+            return View("Cart");
         }
         private int Exist (int id)
         {
