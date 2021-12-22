@@ -6,6 +6,8 @@ using AGCanteenWebshop.Models;
 
 namespace AGCanteenWebshop.Controllers
 {
+
+// Items from Product to Cart
     public class Item
     {
         private Tbl_Product product = new Tbl_Product();

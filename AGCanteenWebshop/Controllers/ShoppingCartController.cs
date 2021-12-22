@@ -16,6 +16,8 @@ namespace AGCanteenWebshop.Controllers
         {
             return View("Cart");
         }
+
+        //If Item exist, create new in same row
         private int Exist (int id)
         {
             List<Item> cart = (List<Item>)Session["cart"];
@@ -25,6 +27,7 @@ namespace AGCanteenWebshop.Controllers
             return -1;
         }
 
+        //Delete an item from the Cart
         public ActionResult Delete(int id)
         {
             int index = Exist(id);
@@ -35,6 +38,7 @@ namespace AGCanteenWebshop.Controllers
         }
 
 
+        //Add an item to the cart
         public ActionResult Buy(int id)
         {
             if (Session["cart"] == null)

@@ -61,7 +61,7 @@ namespace AGCanteenWebshop.Tests
         [TestMethod]
         public void TestAdd()
         {
-            //test logic 
+            //Test logic 
             MathsComponent obj = new MathsComponent();
             int result = obj.Add(10,10);
             Assert.AreEqual(20, result);
